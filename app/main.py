@@ -19,15 +19,7 @@ logger.add(
     format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}",
     level="INFO"
 )
-# Comentado temporalmente hasta solucionar problema de permisos
-# logger.add(
-#     "/app/logs/app.log",
-#     format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {name}:{function}:{line} | {message}",
-#     level="DEBUG",
-#     rotation="10 MB",
-#     retention="7 days"
-# )
-
+ 
 # Modelos Pydantic para validación
 class TextInput(BaseModel):
     text: str = Field(..., min_length=1, max_length=5000, description="Texto a clasificar")
